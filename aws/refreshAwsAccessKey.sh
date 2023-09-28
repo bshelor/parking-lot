@@ -29,21 +29,6 @@ echo "\n<<testing updated credentials - takes about 15 seconds>>"
 # export AWS_PROFILE=$1
 read -t 15 # pause for 15 seconds to let credentials update, seems to take around that long
 test=$(aws sts get-caller-identity)
-
-# update .env values
-echo "<<updating wateworks .env values and restarting api container>>"
-cd ~/src/waterworks/
-sed -i '' -e "s|AWS_ACCESS_KEY\=.*|AWS_ACCESS_KEY=$createdKeyId|" .env
-sed -i '' -e "s|AWS_SECRET_KEY\=.*|AWS_SECRET_KEY=$createdKeySecret|" .env
-docker-compose restart api
-
-echo "<<updating stats_pipeline .env values and rebuilding container>>"
-cd ./stats_pipeline/
-sed -i '' -e "s|AWS_ACCESS_KEY\=.*|AWS_ACCESS_KEY=$createdKeyId|" .env
-sed -i '' -e "s|AWS_SECRET_KEY\=.*|AWS_SECRET_KEY=$createdKeySecret|" .env
-docker-compose build stats_pipeline
-
-echo "<<inactivating and deleting old key>>"
 aws iam update-access-key --access-key-id $activeKeyId --status Inactive
 aws iam delete-access-key --access-key-id $activeKeyId
 
