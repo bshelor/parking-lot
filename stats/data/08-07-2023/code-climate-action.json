@@ -1,0 +1,32 @@
+[
+  {
+      "author": {
+          "id": 86625213,
+          "login": "jonathanberube-zylo",
+          "avatar": "https://avatars.githubusercontent.com/u/86625213?s=60&v=4",
+          "path": "/jonathanberube-zylo",
+          "hovercard_url": "/users/jonathanberube-zylo/hovercard"
+      },
+      "total": 2,
+      "weeks": [
+          {
+              "w": 1690070400,
+              "a": 57,
+              "d": 0,
+              "c": 2
+          },
+          {
+              "w": 1690675200,
+              "a": 0,
+              "d": 0,
+              "c": 0
+          },
+          {
+              "w": 1691280000,
+              "a": 0,
+              "d": 0,
+              "c": 0
+          }
+      ]
+  }
+]
