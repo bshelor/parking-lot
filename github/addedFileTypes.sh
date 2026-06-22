@@ -65,7 +65,7 @@ for commit in $commits; do
 done
 
 # Print the language breakdown
-echo "Files committed by language since $1:"
+echo "Files committed by language since $2:"
 total=0
 for entry in "${languages[@]}"; do
   lang=${entry%%:*}

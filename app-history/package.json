@@ -1,0 +1,16 @@
+{
+  "name": "app-history",
+  "version": "1.0.0",
+  "description": "Capture screenshots and video recordings of web apps at a point in time",
+  "scripts": {
+    "capture": "node capture.js",
+    "capture:headed": "HEADED=true node capture.js",
+    "schedule": "node schedule.js",
+    "schedule:install": "node schedule.js --install",
+    "schedule:remove": "node schedule.js --remove",
+    "schedule:status": "node schedule.js --status"
+  },
+  "dependencies": {
+    "playwright": "^1.50.0"
+  }
+}
